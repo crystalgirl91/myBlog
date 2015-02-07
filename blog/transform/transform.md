@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<title></title>
 #transform 2D
 ###transform语法：transform:[translate() || rotate() || scale() || skew() || martrix()]
 释：transform的变形方式可叠加作用
@@ -45,4 +42,3 @@ CSS3的2D变形到目前为止在主流浏览器中得到较好的支持.但在�
 * Safari3.1+开始支持2D变形，在实际使用的时候需要添加-webkit-私有属性。
 * Opera10.5+开始支持2D变形，在实际使用的时候需要添加-o-私有属性，但在Opera12.1版本不需要添加私有属性，不过在Opera15.0+版本需要添加私有属性-webkit-私有属性。
 * 移动设备iOS Safari3.2+、Android Browser2.1+、Blackberry Browser7.0+、Opera Mobile14.0+、Chrome for Android25.0+需要添加私有属性-webkit-，而Opera Mobile11.0至Opera Mobile12.1和Firefox for Android19.0+不需要使用浏览器私有属性。
-</html>
