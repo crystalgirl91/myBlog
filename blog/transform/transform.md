@@ -1,6 +1,7 @@
 #transform 2D
 ###transform语法：transform:[translate() || rotate() || scale() || skew() || martrix()]
 释：transform的变形方式可叠加作用
+
 	#object {
 	    transform-origin: 0 0;
 	    transform: rotate(15deg)  translateX(230px)  scale(1.5, 2.6)  skew(220deg, -150deg)
