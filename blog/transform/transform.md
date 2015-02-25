@@ -1,5 +1,5 @@
 #transform 2D
-###transform语法：transform:[translate() || rotate() || scale() || skew() || martrix()]
+###transform语法：transform:[translate() | rotate() | scale() | skew() | martrix()]
 释：transform的变形方式可叠加作用
 
 	#object {
@@ -43,3 +43,18 @@ CSS3的2D变形到目前为止在主流浏览器中得到较好的支持.但在�
 * Safari3.1+开始支持2D变形，在实际使用的时候需要添加-webkit-私有属性。
 * Opera10.5+开始支持2D变形，在实际使用的时候需要添加-o-私有属性，但在Opera12.1版本不需要添加私有属性，不过在Opera15.0+版本需要添加私有属性-webkit-私有属性。
 * 移动设备iOS Safari3.2+、Android Browser2.1+、Blackberry Browser7.0+、Opera Mobile14.0+、Chrome for Android25.0+需要添加私有属性-webkit-，而Opera Mobile11.0至Opera Mobile12.1和Firefox for Android19.0+不需要使用浏览器私有属性。
+
+#transform3D 
+##translate3d(tx,ty,tz)
+
+#transform重要属性
+###transform-origin
+###transform-style:flat|preserve-3d
+*flat值为默认值，表示所有子元素在2D平面呈现。
+*preserve-3d值表示所有子元素在3D空间中呈现。
+*transform-style属性需要设置在父元素中，并且高于任何嵌套的变形元素。
+提示：
+如果你的元素设置了transform-style值为preserve-3d，就不能为了防止子元素溢出容器而设置overflow值为hidden，如果设置了overflow:hidden同样可以迫死子元素出现在同一平面（和元素设置了transform-style为flat一样的效果）
+###perspective：none | <length>
+
+
