@@ -1,0 +1,528 @@
+<!doctype html>
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <style type="text/css">
+    h1{font-size: 50px; text-align:center; margin-bottom:10px; }
+    h2{font-size:40px; }
+    h3{font-size:30px;color:#00a3cf}
+    h4{font-size:24px;}
+    p{font-size:20px;}
+    pre{font-size:20px;}
+    .list{padding-left:40px;}
+    .list-explain{font-size:20px;padding-left:40px;list-style-type:circle;}
+    .img-wrap{text-align:center;}
+    .text-center{text-align:center;}
+    .view{display:box;display:-webkit-box;}
+    .c-opration{background:#000;margin-top:20px;color:#fff;padding:20px;}
+    .c-opration li{display:-webkit-box;display:box;}
+    .c-opration pre{display:-webkit-box-flex:1;display:box-flex:1}
+    .c-opration input{outline:none;margin-left:40px;vertical-align:middle;color: #fff; background-color: #739e73; border-color: #659265;border-radius:3px;cursor:pointer;}
+    .c-opration input:active{position: relative;left:1px;top:1px;outline:none;}
+    .view .c-opration li{display:block;}
+    .view .c-opration pre{width:100%;font-size:15px;}
+    .view input{display:block;}
+    .view .c-view{-webkit-box-flex:1; margin: 15px; position: relative; background: url(img/bg.jpg) repeat center center; -webkit-perspective: 1200px; -moz-perspective: 1200px; -ms-perspective: 1200px; -o-perspective: 1200px; perspective: 1200px; }
+    .view .c-axis{-webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d; transform-style: preserve-3d;}
+    .c-axis{width:100%;height:400px;background:url(img/bg.jpg) repeat center center;position: relative;}
+    .c-axis img{height:200px;width:142px;position: absolute;left:50%;top:50%;margin-left:-71px;margin-top:-100px;}
+    .c-axis img:nth-child(1){z-index: 1;opacity:0.3}
+    .c-axis img:nth-child(2){z-index: 2;;-webkit-transition: all .2s 0s; -o-transition: all .2s 0s; transition: all .2s 0s;}
+    .code{background:#000;font-size:18px;color:#fff;line-height:20px;}
+    .code strong{color:#b58900}
+    </style>
+</head>
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress">
+<!--          <div class="step slide" data-x="-2000" data-y="-1500">
+            <h1>CSS3 2D Ttransform</h1>
+        </div> -->
+        <!-- 位移函数 translate() -->
+        <div class="step slide" data-x="-1000" data-y="-1500">
+            <h1>CSS3 Transform(2D)</h1>
+            <h3>位移函数 translate()</h3>
+            <h4>语法：translate(tx,ty) | translateX(tx) | translateY(ty)</h4>
+            <ul class="list-explain">
+                <li>tx是一个代表X轴（横坐标）移动的向量长度，当其值为正值时，元素向X轴右方向移动，反之其值为负值时，元素向X轴左方向移动。</li>
+                <li>ty是一个代表Y轴（纵向标）移动的向量长度，当其值为正值时，元素向Y轴下方向移动，反之其值为负值时，元素向Y轴上方向移动。如果ty没有显式设置时，相当于ty=0。</li>
+                <li>translateX(tx)等同于translate(tx,0)或translate(tx)</li>
+                <li>translateY(ty)等同于translate(0,ty)</li>
+
+            </ul>
+            <!-- <p class="img-wrap"><img src="img/transform-0.jpg"></p> -->
+
+        </div>
+        <div class="step slide" data-x="0" data-y="-1500">
+            <div class="c-view">
+                <div  class="c-axis">
+                    <img class="origin-img" src="img/cardKingClub.png" alt="">
+                    <img class="animate-img" src="img/cardKingClub.png" alt="">
+                </div>
+                <ul class="c-opration">
+                    <li><pre>transform: translate(200px,0)</pre><input type="button" value="演示效果"></li>
+                    <li><pre>transform: translate(-200px,0)</pre><input type="button" value="演示效果"></li>
+                    <li><pre>transform: translate(0,70px)</pre><input type="button" value="演示效果"></li>
+                    <li><pre>transform: translate(0,-70px)</pre><input type="button" value="演示效果"></li>
+                    <li><pre>transform: translate(200px,70px)</pre><input type="button" value="演示效果"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="step slide" data-x="1000" data-y="-1500">
+            <p>HTML</p>
+    <pre class="code">
+    &lt;div&gt;
+        &lt;img src="images/cardKingClub.png" alt="" width="70" height="100" /&gt;
+        &lt;img src="images/cardKingClub.png" alt="" width="70" height="100" /&gt;
+    &lt;/div&gt; </pre>
+    <p>CSS</p>
+    <pre class="code">
+    div {
+        width: 500px;
+        height: 300px;
+        margin: 30px auto;
+        position: relative;
+        background: url(images/bg-grid.jpg) no-repeat center center;
+        background-size: 100% 100%;
+        }
+    div img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -35px;
+        margin-top: -50px; 
+    }
+    div img:nth-child(1){
+        opacity: .5;
+        z-index: 1;
+    }
+    div img:nth-child(2){
+        opacity: 1;
+        z-index: 2;
+        transform: translate(100px,0);
+    }</pre>
+        </div>
+        <!-- 缩放函数scale() -->
+        <div class="step slide" data-x="2000" data-y="-1500">
+         <h3>缩放函数scale()</h3>
+         <pre>语法：scale(sx,sy) | scaleX(sx) | scaleY(sy)</pre>
+         <ul class="list-explain">
+            <li> sx：用来指定横向坐标（X轴）方向的缩放向量，如果值为0.01~0.99之间，会让对象在X轴方向缩小，如果值大于或等于1.01，对象在X轴方向放大。</li>
+            <li> sy：用来指定纵向坐标（Y轴）方向的缩放量，如果值为0.01~0.99之间，会让对象在Y轴方向缩小，如果值大于或等于1.01，对象在Y轴方向放大。如果sy没有显示设置，相当于sy=sx</li>
+            <li>scaleX(sx)：相当于scale(sx,1)。表示元素只在X轴（水平方向）缩放元素。</li>
+            <li>scaleY(sy)：相当于scale(1,sy)。表示元素只在Y轴（纵横方向）缩放元素。</li>
+            <li>在scale()函数中，取值除了可以取正值之外，同时还可以取负值。只不过取负值时，会先让元素进行翻转，然后在进行缩放。</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="3000" data-y="-1500"  >
+        <div class="c-view">
+            <div  class="c-axis">
+                <img class="origin-img" src="img/cardKingClub.png" alt="">
+                <img  class="animate-img" src="img/cardKingClub.png" alt="">
+            </div>
+            <ul class="c-opration">
+                <li><pre>transform: scale(1.5)</pre><input type="button" value="演示效果"></li>
+                <li><pre>transform: scale(.5)</pre><input type="button" value="演示效果"></li>
+                <li><pre>transform: scaleY(.5)</pre><input type="button" value="演示效果"></li>
+                <li><pre>transform: scaleX(.5)</pre><input type="button" value="演示效果"></li>
+                <li><pre>transform: scale(.2,1.5)</pre><input type="button" value="演示效果"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 旋转函数rotate() -->
+    <div class="step slide" data-x="4000" data-y="-1500" >
+        <h3>旋转函数rotate()</h3>
+        <pre>语法：rotate(a)</pre>
+        <ul class="list-explain">
+            <li>rotate()函数只接受一个参数值，单位为deg。</li>
+            <li>a：代表的是一个旋转的角度值。其取值可以是正的，也可以是负的。如果取值为正值时，元素默认之下相对元素中心点顺时针旋转；如果取值为负值时，元素默认之下相对元素中心点逆时针旋转。</li>
+            <li>通过transform-origin属性可以改变旋转函数的基点</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="5000" data-y="-1500"  >
+        <div class="c-view">
+            <div  class="c-axis">
+                <img class="origin-img" src="img/cardKingClub.png" alt="">
+                <img class="animate-img" src="img/cardKingClub.png" alt="">
+            </div>
+            <ul class="c-opration">
+                <li><pre>transform: rotate(45deg)</pre><input type="button" value="演示效果"></li>
+                <li><pre>transform: rotate(-45deg)</pre><input type="button" value="演示效果"></li>
+                <li><pre>transform-origin:top left;transform: rotate(45deg);</pre><input type="button" value="演示效果"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 倾斜函数skew() -->
+    <div class="step slide" data-x="6000" data-y="-1500" >
+        <h3>倾斜函数skew()</h3>
+        <pre>语法：skew(ax,ay)</pre>
+        <ul class="list-explain">
+            <li>ax：用来指定元素水平方向（X轴方向）倾斜的角度。</li>
+            <li>ay：用来指定元素垂直方向（Y轴方向）倾斜的角度。如果未显式的设置这个值，其默认为０。</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="7000" data-y="-1500"  >
+        <div class="c-view">
+            <div  class="c-axis">
+                <img class="origin-img" src="img/cardKingClub.png" alt="">
+                <img class="animate-img" src="img/cardKingClub.png" alt="">
+            </div>
+            <ul class="c-opration">
+                <li><pre>transform: skew(30deg,10deg)</pre><input type="button" value="演示效果"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 矩阵函数matrix() -->
+    <div class="step slide" data-x="8000" data-y="-1500" >
+        <h3>矩阵函数matrix()</h3>
+        <pre>语法：matrix(a,b,c,d,e,f)</pre>
+        <p>实际上，这六个参数，对应的矩阵就是：</p>
+        <p class="img-wrap"><img src="img/matrix.jpg" alt=""></p>
+        <p>matrix计算方法: x和y是元素初始原点的坐标，x’和y’则是通过矩阵变换后得到的新原点坐标。通过中间的那个3x3的变换矩阵，对原先的坐标施加变换，就能得到新的坐标了。依据矩阵变换规则即可得到：x’=ax+cy+e和y’=bx+dy+f：</p>
+        <p class="img-wrap"><img src="img/matrix-1.jpg" alt=""></p>
+        <h4>例子：</h4>
+        <pre class="code">
+
+        transform: matrix(1,0,0,1,50,50);/*a=1,b=0,c=0,d=1,e=50,f=50*/ 
+        </pre>
+        <p>现在，我们根据这个矩阵偏移元素的中心点，假设是(0,0)，即x=0，y=0。带入上式结果，得x'=50,y'=50;</p>
+        <p>transform:matrix(1,0,0,1,50,50);等同于transform: translate(50px,50px)</p>
+    </div>
+    <div class="step slide" data-x="9000" data-y="-1500" >
+        <div class="c-view">
+            <div  class="c-axis">
+                <img class="origin-img" src="img/matrix-3.png" alt="">
+                <img class="animate-img" src="img/matrix-3.png" alt="">
+            </div>
+            <ul class="c-opration">
+                <li><pre>transform: matrix(1,0,0,1,50,50)</pre><input type="button" value="演示效果"></li>
+            </ul>
+        </div>
+    </div>    
+    <!-- Ttransform兼容性 -->
+    <div class="step slide" data-x="10000" data-y="-1500" >
+        <h3>Ttransform兼容性</h3>
+        <ul class="list-explain">
+            <li>IE9中使用2D变形时，需要添加-ms-私有属性，在IE10+版本开始支持标准版本。</li>
+            <li>Firefox3.5至Firefox15.0版本需要添加-moz-的私有属性，在Firefox16+版本开始支持标准版本。</li>
+            <li>Chrome4.0+开始支持2D变形，在实际使用的时候需要添加-webkit-私有属性。</li>
+            <li>Safari3.1+开始支持2D变形，在实际使用的时候需要添加-webkit-私有属性。</li>
+            <li>Opera10.5+开始支持2D变形，在实际使用的时候需要添加-o-私有属性，但在Opera12.1版本不需要添加私有属性，不过在Opera15.0+版本需要添加私有属性-webkit-私有属性。</li>
+            <li>移动设备iOS Safari3.2+、Android Browser2.1+、Blackberry Browser7.0+、Opera Mobile14.0+、Chrome for Android25.0+需要添加私有属性-webkit-，而Opera Mobile11.0至Opera Mobile12.1和Firefox for Android19.0+不需要使用浏览器私有属性。</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="11000" data-y="-1500">
+        <p>CSS</p>
+        <pre class="code">
+    div {
+        width: 500px;
+        height: 300px;
+        margin: 30px auto;
+        position: relative;
+        background: url(images/bg-grid.jpg) no-repeat center center;
+        background-size: 100% 100%;
+        }
+    div img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -35px;
+        margin-top: -50px; 
+    }
+    div img:nth-child(1){
+        opacity: .5;
+        z-index: 1;
+    }
+    div img:nth-child(2){
+        opacity: 1;
+        z-index: 2;
+        <strong>-webkit-transform: translate(100px,0);
+           -moz-transform: translate(100px,0);
+            -ms-transform: translate(100px,0);
+             -o-transform: translate(100px,0);
+                transform: translate(100px,0); </strong>
+    }   </pre>
+    </div>
+
+
+
+    <!-- CSS3 transform(3D) -->
+    <div class="step slide" data-x="9000" data-y="-700">
+        <h1>CSS3 transform(3D)</h1>
+        <h3>3D位移函数</h3>
+        <pre>语法：translate3d(tx,ty,tz) | translateZ(tz)</pre>
+        <ul class="list-explain">
+            <li>tx：代表横向坐标位移向量的长度；</li>
+            <li>ty：代表纵向坐标位移向量的长度；</li>
+            <li>tz：代表Z轴位移向量的长度。此值不能是一个百分比值，如果取值为百分比值，将会认为无效值。</li>
+            <li>translateZ()函数在实际使用中等同于translate3d(0,0,tz)</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="8000" data-y="-700"  >
+            <div class="view">
+                <div class="c-view">
+                    <div class="c-axis">
+                        <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                        <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                    </div>
+                    <ul  class="c-opration">
+                        <li><pre>transform: translate3d(30px,30px,200px)</pre><input type="button" value="演示效果"></li>
+                    </ul>
+                </div>    
+                <div class="c-view">
+                    <div class="c-axis">
+                        <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                        <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                    </div>
+                    <ul  class="c-opration">
+                        <li><pre>transform: translate3d(30px,30px,-200px)</pre><input type="button" value="演示效果"></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div class="step slide" data-x="7000" data-y="-700">
+<p>HTML</p>
+<pre class="code">
+    &lt;div class="stage s1"&gt;
+        &lt;div class="container"&gt;
+            &lt;img src="img/cardKingClub.png" alt="" width="70" height="100" /&gt;
+            &lt;img src="img/cardKingClub.png" alt="" width="70" height="100" /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="stage s2"&gt;
+        &lt;div class="container"&gt;
+            &lt;img src="img/cardKingClub.png" alt="" width="70" height="100" /&gt;
+            &lt;img src="img/cardKingClub.png" alt="" width="70" height="100" /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+        </pre>
+        <p>CSS</p>
+        <pre class="code">
+.stage {
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 15px;
+    position: relative;
+    background: url(img/bg.jpg) repeat center center;
+   <strong> -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    -o-perspective: 1200px;
+    perspective: 1200px;</strong>
+}</pre>
+    </div>
+
+    <div class="step slide" data-x="6000" data-y="-700">
+<pre class="code" style="font-size:16px;line-height: 17px">
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    <strong> -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;</strong>
+}
+.container img {
+    position: absolute;
+    margin-left: -35px;
+    margin-top: -50px; 
+}
+.container img:nth-child(1){
+    z-index: 1;
+    opacity: .6;
+}
+.s1 img:nth-child(2){
+    z-index: 2; 
+    <strong> -webkit-transform: translate3d(30px,30px,200px);
+    -moz-transform: translate3d(30px,30px,200px);
+    -ms-transform: translate3d(30px,30px,200px);
+    -o-transform: translate3d(30px,30px,200px);
+    transform: translate3d(30px,30px,200px);</strong>
+}
+.s2 img:nth-child(2){
+    z-index: 2; 
+    <strong>
+    -webkit-transform: translate3d(30px,30px,-200px);
+    -moz-transform: translate3d(30px,30px,-200px);
+    -ms-transform: translate3d(30px,30px,-200px);
+    -o-transform: translate3d(30px,30px,-200px);
+    transform: translate3d(30px,30px,-200px);</strong>
+}
+</pre>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="-700">
+        <h3>3D缩放函数</h3>
+        <pre>语法：scale3d(sx,sy,sz) | scaleZ(sz)</pre>
+        <ul class="list-explain">
+            <li> sx：横向缩放比例；</li>
+            <li> sy：纵向缩放比例；</li>
+            <li> sz：Z轴缩放比例；</li>
+            <li> scaleZ()和scale3d(1,1,sz)函数单独使用时没有任何效果，需要配合其他的变形函数一起使用才会有效果</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="4000" data-y="-700">
+        <div class="view">
+            <div class="c-view">
+                <div class="c-axis">
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                </div>
+                <ul  class="c-opration">
+                    <li><pre>transform: scaleZ(5) rotateX(45deg)</pre><input type="button" value="演示效果"></li>
+                </ul>
+            </div>    
+            <div class="c-view">
+                <div class="c-axis">
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                </div>
+                <ul  class="c-opration">
+                    <li><pre>transform: scaleZ(.25) rotateX(45deg)</pre><input type="button" value="演示效果"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="step slide" data-x="3000" data-y="-700">
+        <h1>3D旋转</h1>
+        <pre>语法：rotateX(a) | rotateY(a) | rotateZ(a) | rotate3d(x,y,z,a) </pre>
+        <ul class="list-explain">
+            <li>其中a指的是一个旋转角度值，其值可以是正值也可以是负值，正值表示顺时针，负值表示逆时针。</li>
+        </ul>
+        <p>rotate3d()中取值说明：</p>
+        <ul class="list-explain">
+            <li>x：是一个0到１之间的数值，主要用来描述元素围绕X轴旋转的矢量值；</li>
+            <li>y：是一个０到１之间的数值，主要用来描述元素围绕Y轴旋转的矢量值；</li>
+            <li>z：是一个０到１之间的数值，主要用来描述元素围绕Z轴旋转的矢量值；</li>
+            <li>a：是一个角度值，主要用来指定元素在3D空间旋转的角度，如果其值为正值，元素顺时针旋转，反之元素逆时针旋转。</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="2000" data-y="-700">
+        <p class="img-wrap"><img src="img/rotate-3d-1.jpg" alt=""></p>
+    </div>
+
+    <!-- transform重要属性 -->
+     <div class="step slide" data-x="0" data-y="0">
+        <h3>重要属性</h3>
+        <h4>transform-origin</h4>
+        <p>CSS变形进行的旋转、移位、缩放等操作都是默认以元素自己中心（变形原点）位置进行变形的。但很多时候需要在不同的位置对元素进行变形操作，我们就可以使用transform-origin来对元素进行原点位置改变。</p>
+        <ul class="list-explain">
+            <li>transform-origin属性值可以是百分比、em、px等具体的值，也可以是top、right、bottom、left和center这样的关键词。</li>
+            <li>2D的变形中的transform-origin属性可以是一个参数值，也可以是两个参数值。如果是两个参数值时，第一值设置水平方向X轴的位置，第二个值是用来设置垂直方向Ｙ轴的位置。</li>
+            <li>3D的变形中的transform-origin属性还包括了Ｚ轴的第三个值.</li>
+        </ul>
+    </div>
+    <div class="step slide" data-x="1000" data-y="0">
+        <div class="view">
+            <div class="c-view">
+                <div class="c-axis">
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                </div>
+                <ul  class="c-opration">
+                    <li><pre class="code">transform: scale(.5);
+transform-origin:center;</pre><input type="button" value="演示效果"></li>
+                </ul>
+            </div>    
+            <div class="c-view">
+                <div class="c-axis">
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                    <img src="img/cardKingClub.png" alt="" width="70" height="100" />
+                </div>
+                <ul  class="c-opration">
+                    <li><pre class="code">transform: scale(.5);
+transform-origin:right;</pre><input type="button" value="演示效果"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--     
+    
+    
+    <div class="step slide" data-x="3000" data-y="-1500">
+        <h3>重要属性</h3>
+        <pre>transform-origin：</pre>
+        <p>CSS变形进行的旋转、移位、缩放等操作都是默认以元素自己中心（变形原点）位置进行变形的。但很多时候需要在不同的位置对元素进行变形操作，我们就可以使用transform-origin来对元素进行原点位置改变。</p>
+        <ul class="list-explain">
+            <li>transform-origin属性值可以是百分比、em、px等具体的值，也可以是top、right、bottom、left和center这样的关键词。</li>
+            <li>2D的变形中的transform-origin属性可以是一个参数值，也可以是两个参数值。如果是两个参数值时，第一值设置水平方向X轴的位置，第二个值是用来设置垂直方向Ｙ轴的位置。</li>
+        </ul>
+        <p class="img-wrap"><img src="img/transform-5.jpg"><img src="img/transform-6.jpg"></p>
+    </div>
+    <div class="step slide" data-x="4000" data-y="-1500">
+        <pre>transform-style：</pre>
+        <p>transform-style属性是3D空间一个重要属性，指定嵌套元素如何在3D空间中呈现。他主要有两个属性值：flat和preserve-3d。</p>
+        <pre>语法：transform-style:plat | preserve-3d</pre>
+        <ul class="list-explain">
+            <li>flat值为默认值，表示所有子元素在2D平面呈现。preserve-3d表示所有子元素在3D空间中呈现。</li>
+        </ul>
+    </div> -->
+    <div id="overview" class="step" data-x="3000" data-y="-1500" data-scale="10">
+    </div>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script type="text/javascript">
+window.onload = function(){
+    var initEles = document.getElementsByClassName("c-view");
+    initView(initEles);
+
+    function initView(eles){
+        var init = function(ele){
+            var ele_view = ele.children[0];
+            var ele_img = ele_view.children[1];
+            ele.addEventListener("click",function(e){
+                var _target = e.target;
+                var _style = "";
+                if(_target.nodeName.toLowerCase() === "input"){
+                    _style = _target.previousSibling.innerHTML;
+                    ele_img.setAttribute("style",_style);
+                }
+            })
+        };
+        if(eles.length){
+            for(var i=0;i<eles.length;i++){
+                init(eles[i])
+            }
+        }else{
+            init(eles);
+        }
+    } 
+}
+</script>
+
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+
+</body>
+</html>
+
