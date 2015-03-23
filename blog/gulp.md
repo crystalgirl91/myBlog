@@ -1,4 +1,7 @@
 #gulp 文档
+### gulp使用
+    第一步：安装全局gulp
+    
 ### gulp.src(globs[, options])
 找到globs匹配的文件，返回可以被piped使用的流
 
