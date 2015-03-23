@@ -2,10 +2,10 @@
 ### gulp.src(globs[, options])
 找到globs匹配的文件，返回可以被piped使用的流
 
-  gulp.src("client/templates/*.jade")
-    .pipe(jade())
-    .pipe(minify())
-    .pipe(gulp.dest('build/minified_templates'))
+    gulp.src("client/templates/*.jade")
+      .pipe(jade())
+      .pipe(minify())
+      .pipe(gulp.dest('build/minified_templates'))
     
 ####globs：数组或者字符串
 
