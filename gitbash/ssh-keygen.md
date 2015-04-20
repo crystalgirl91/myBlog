@@ -138,3 +138,5 @@ Enter passphrase for key '/c/Users/Administrator/.ssh/id_rsa':
 #####5. 测试一下该SSH
 
 	$ ssh -T 10.1.56.254
+
+#### 主意：测试的时候的主机名，github.com还是git@github.com
