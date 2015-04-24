@@ -1,4 +1,4 @@
-#apply and call
+#apply and call and bind
 
 在JS中每个函数对象都有内置方法apply和call。
 ##apply语法:Function.apply(Objthis,ArrParam);
@@ -33,6 +33,33 @@
     Math.max.apply(null,arr)          //返回5
     
   上例中Math.max方法只接受以逗号分离的多个参数，但很多情况下我们需要传入一个信息量大数组，这个时候通过apply方法就可以简单的实现.
+  
+###bind
+bind方法是ECMAScript5中的新方法。用于返回一个this值及参数已指定的新函数。
+
+语法：Function.prototype.bind(Object,params),
+
+#####第一个参数Object : 看例子
+        var add = function(y){
+            return this.x + y
+        };
+        var bindAdd = add.bind({"x":1});
+        bindAdd(2);          ##输出3
+        
+上面的例子，首先声明一个函数add，在add上调用bind，传入的第一个参数Object为{"x":1},返回了一个新的函数并赋值给bindAdd，这个新函数bindAdd的执行上下文（this）将永远指向Object。所以输出3。
+
+#####第二个参数Params : 看例子
+        var add = function(x,y){
+            return x + y
+        };
+        var bindAdd = add.bind(null,1);
+        bindAdd(2);          ##输出3
+
+接着看这个例子，在add上调bind函数，传入的第一个参数为null，即,返回新函数的this值为null。传入的第二个参数Prames为1，
+它绑定了新函数的参数，换句话说，每次调用新函数bindAdd，这个参数params（例子中的参数1）都会作为实参传入函数，而bindAdd自定义的参数（例子中的参数2）会依次追加在后面被传入函数。所以x为1，y为2，输出3。
+
+
+
     
   
   
